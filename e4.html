@@ -1,0 +1,41 @@
+<html>
+<title>Exercise 4</title>
+<head></head>
+<body>
+<p id="pg">Blandit aliquam etiam erat velit. Dolor magna eget est lorem ipsum dolor sit amet consectetur. Vel pretium lectus quam id leo in vitae turpis. In est ante in nibh mauris. Viverra nam libero justo laoreet sit amet cursus. Aliquam sem fringilla ut morbi tincidunt augue interdum. Rhoncus est pellentesque elit ullamcorper dignissim cras. Diam sollicitudin tempor id eu. Scelerisque eu ultrices vitae auctor eu augue ut lectus. Malesuada nunc vel risus commodo viverra maecenas accumsan. Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim. Consequat interdum varius sit amet. Aliquet nibh praesent tristique magna sit. Donec ac odio tempor orci dapibus. Volutpat diam ut venenatis tellus in. Cursus risus at ultrices mi tempus imperdiet nulla. Rutrum tellus pellentesque eu tincidunt tortor aliquam nulla facilisi cras. Varius quam quisque id diam vel quam elementum.</p>
+
+<form name="changecolor">
+  <p>*Please note that all colors must be two-digit hex values* (ie. ff, 00)</p>
+  <h1>Border:</h1>
+  <input name="b-r" type="text"> Red</input><br>
+  <input name="b-g" type="text"> Green</input><br>
+  <input name="b-b" type="text"> Blue</input><br>
+  <input name="b-width" type="text"> Width</input>
+  <h1>Background Color:</h1>
+  <input name="bg-r" type="text"> Red</input><br>
+  <input name="bg-g" type="text"> Green</input><br>
+  <input name="bg-b" type="text"> Blue</input><br>
+  <input value="Change Attributes" type="button" onclick="change()">
+</form>
+</body>
+</html>
+<script>
+  let information = [];
+  function change()
+  {
+    information = [
+      document.forms["changecolor"]["b-r"].value,
+      document.forms["changecolor"]["b-g"].value,
+      document.forms["changecolor"]["b-b"].value,
+      document.forms["changecolor"]["b-width"].value,
+      document.forms["changecolor"]["bg-r"].value,
+      document.forms["changecolor"]["bg-g"].value,
+      document.forms["changecolor"]["bg-b"].value,
+    ]
+    let par = document.getElementById("pg");
+    par.style.borderColor = "#" + information[0] + information[1] + information[2];
+    par.style.borderWidth = information[3];
+    par.style.borderStyle = "solid";
+    par.style.backgroundColor = "#" + information[4] + information[5] + information[6];
+  }
+</script>

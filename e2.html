@@ -1,0 +1,29 @@
+<html>
+<title>Exercise 2</title>
+<body>
+    <h1>Look at some images:</h1>
+    <div id="images">
+        <img style='width: 500px; height: 500px;' src='img/1.png'></img>
+    </div>
+    <br>
+    <button onclick="rotate(-1)">Previous</button>
+    <button onclick="rotate(1)">Next</button>
+</body>
+<script>
+    let slide = 1;
+    function rotate(n)
+    {
+        if(slide + n > 5)
+        {
+            slide = 1;
+        } else if (slide + n < 1)
+        {
+            slide = 5;
+        } else
+        {
+            slide += n;
+        }
+        document.getElementById("images").innerHTML = "<img style='width: 500px; height: 500px;' src='img/" + slide + ".png'></img>";
+    }
+</script>
+</html>

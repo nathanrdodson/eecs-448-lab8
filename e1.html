@@ -1,0 +1,29 @@
+<html>
+<title>Exercise 1</title>
+<body>
+    <h1>Compare some passwords:</h1>
+    <form name="passwords">
+        <input name="password1" type="password"><br>
+        <input name="password2" type="password"><br>
+        <input value="Validate" type="button" onclick="checkPasswords()">
+    </form>
+</body>
+<script>
+    function checkPasswords()
+    {
+        let x = document.forms["passwords"]["password1"].value;
+        let y = document.forms["passwords"]["password2"].value;
+
+        if(x !== y)
+        {
+            alert("Passwords do not match!");
+        } else if(x.length < 8)
+        {
+            alert("Password must be greater than 8 characters!");
+        } else
+        {
+            alert("Passwords match!");
+        }
+    }
+</script>
+</html>
